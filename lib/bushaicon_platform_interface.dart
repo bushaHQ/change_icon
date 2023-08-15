@@ -27,7 +27,7 @@ abstract class BushaiconPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<void> switchIconTo({required String className}) {
+  Future<void> switchIconTo({required List<String> classNames}) {
     throw UnimplementedError('switchIconTo() has not been implemented.');
   }
 

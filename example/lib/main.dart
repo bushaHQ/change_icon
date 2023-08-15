@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
 
   void switchAppIcon() async {
     await _bushaiconPlugin.switchIconTo(
-      className: 'MainActivity',
+     classNames: ['DarkTheme', '']
     );
   }
 

@@ -5,8 +5,8 @@ class Bushaicon {
     return BushaiconPlatform.instance.getPlatformVersion();
   }
 
-  Future<void> switchIconTo({required String className}) async {
-    await BushaiconPlatform.instance.switchIconTo(className: className);
+  Future<void> switchIconTo({required List<String> classNames}) async {
+    await BushaiconPlatform.instance.switchIconTo(classNames: classNames);
   }
 
   static Future<void> initialize({required List<String> classNames}) async {

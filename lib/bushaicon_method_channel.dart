@@ -16,8 +16,8 @@ class MethodChannelBushaicon extends BushaiconPlatform {
   }
 
   @override
-  Future<void> switchIconTo({required String className}) async {
-    await methodChannel.invokeMethod("switchIconTo", [className]);
+  Future<void> switchIconTo({required List<String> classNames}) async {
+    await methodChannel.invokeMethod("switchIconTo", classNames);
   }
 
   @override

@@ -10,6 +10,41 @@ class MockBushaiconPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+  
+  @override
+  Future<String?> getAlternateIconName() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<int> getApplicationIconBadgeNumber() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<void> initialize({required List<String> classNames}) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future setAlternateIconName(String? iconName, {bool showAlert = true}) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future setApplicationIconBadgeNumber(int batchIconNumber) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<bool> supportsAlternateIcons() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<void> switchIconTo({required List<String> classNames}) {
+    throw UnimplementedError();
+  }
 }
 
 void main() {

@@ -80,9 +80,8 @@ public class MethodCallImplementation implements MethodChannel.MethodCallHandler
 void updateIcon() {
     if (iconChanged){
         String className = args.get(0);
-        String definePackageName = args.get(1);
         PackageManager pm = activity.getPackageManager();
-        String packageName = (definePackageName != null && !definePackageName.isEmpty()) ? definePackageName  : activity.getPackageName();
+        String packageName = activity.getPackageName();
         int componentState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
         int i=0;
         for(;i<classNames.size();i++) {

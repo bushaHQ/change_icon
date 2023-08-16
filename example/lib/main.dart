@@ -5,14 +5,16 @@ import 'package:flutter/services.dart';
 
 import 'package:bushaicon/bushaicon.dart';
 
-void main() => runApp(MaterialApp(home: MyApp()));
+void main() => runApp(const MaterialApp(home: MyApp()));
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  AppState createState() => AppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class AppState extends State<MyApp> {
   int batchIconNumber = 0;
   final _bushaiconPlugin = Bushaicon();
 
@@ -68,7 +70,7 @@ class _MyAppState extends State<MyApp> {
               child: Text(
                 "Current batch number: $batchIconNumber",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
             TextField(
@@ -77,17 +79,17 @@ class _MyAppState extends State<MyApp> {
                 FilteringTextInputFormatter.allow(RegExp("\\d+")),
               ],
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: "Set Batch Icon Number",
                 suffixIcon: loading
-                    ? Padding(
-                        padding: const EdgeInsets.all(16.0),
+                    ? const Padding(
+                        padding: EdgeInsets.all(16.0),
                         child: CircularProgressIndicator(
                             // strokeWidth: 2,
                             ),
                       )
                     : IconButton(
-                        icon: Icon(Icons.send),
+                        icon: const Icon(Icons.send),
                         onPressed: () async {
                           setState(() {
                             loading = true;
@@ -96,23 +98,23 @@ class _MyAppState extends State<MyApp> {
                             await Bushaicon.setApplicationIconBadgeNumber(
                                 int.parse(controller.text));
                             batchIconNumber = await Bushaicon.getApplicationIconBadgeNumber();
-                            if (this.mounted) {
+                            if (mounted) {
                               ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                                 content: Text("Successfully changed batch number"),
                               ));
                             }
                           } on PlatformException {
-                            if (this.mounted) {
+                            if (mounted) {
                               ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                                 content: Text("Failed to change batch number"),
                               ));
                             }
                           } catch (e) {
-                            if (this.mounted) {
+                            if (mounted) {
                               ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                                 content: Text("Failed to change batch number"),
                               ));
                             }
@@ -125,7 +127,7 @@ class _MyAppState extends State<MyApp> {
                       ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             Padding(
@@ -133,13 +135,13 @@ class _MyAppState extends State<MyApp> {
               child: Text(
                 "Current Icon Name: $currentIconName",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
             SwitchListTile(
-                title: Text("Show Alert"),
+                title: const Text("Show Alert"),
                 subtitle:
-                    Text("Disable alert at your own risk as it uses a private/undocumented API"),
+                    const Text("Disable alert at your own risk as it uses a private/undocumented API"),
                 value: showAlert,
                 onChanged: (value) {
                   setState(() {
@@ -147,15 +149,15 @@ class _MyAppState extends State<MyApp> {
                   });
                 }),
             OutlinedButton.icon(
-              icon: Icon(Icons.ac_unit),
-              label: Text("Team Fortress"),
+              icon: const Icon(Icons.ac_unit),
+              label: const Text("Team Fortress"),
               onPressed: () async {
                 try {
                   print(await Bushaicon.supportsAlternateIcons);
                   if (await Bushaicon.supportsAlternateIcons) {
                     await Bushaicon.setAlternateIconName("teamfortress", showAlert: showAlert);
                     ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("App icon change successful"),
                     ));
                     Bushaicon.getAlternateIconName().then((v) {
@@ -168,20 +170,20 @@ class _MyAppState extends State<MyApp> {
                 } on PlatformException {
                 } catch (e) {}
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("Failed to change app icon"),
                 ));
               },
             ),
             OutlinedButton.icon(
-              icon: Icon(Icons.ac_unit),
-              label: Text("Photos"),
+              icon: const Icon(Icons.ac_unit),
+              label: const Text("Photos"),
               onPressed: () async {
                 try {
                   if (await Bushaicon.supportsAlternateIcons) {
                     await Bushaicon.setAlternateIconName("photos", showAlert: showAlert);
                     ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("App icon change successful"),
                     ));
                     Bushaicon.getAlternateIconName().then((v) {
@@ -194,20 +196,20 @@ class _MyAppState extends State<MyApp> {
                 } on PlatformException {
                 } catch (e) {}
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("Failed to change app icon"),
                 ));
               },
             ),
             OutlinedButton.icon(
-              icon: Icon(Icons.ac_unit),
-              label: Text("Chills"),
+              icon: const Icon(Icons.ac_unit),
+              label: const Text("Chills"),
               onPressed: () async {
                 try {
                   if (await Bushaicon.supportsAlternateIcons) {
                     await Bushaicon.setAlternateIconName("chills", showAlert: showAlert);
                     ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("App icon change successful"),
                     ));
                     Bushaicon.getAlternateIconName().then((v) {
@@ -220,23 +222,23 @@ class _MyAppState extends State<MyApp> {
                 } on PlatformException {
                 } catch (e) {}
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("Failed to change app icon"),
                 ));
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             OutlinedButton.icon(
-              icon: Icon(Icons.restore_outlined),
-              label: Text("Restore Icon"),
+              icon: const Icon(Icons.restore_outlined),
+              label: const Text("Restore Icon"),
               onPressed: () async {
                 try {
                   if (await Bushaicon.supportsAlternateIcons) {
                     await Bushaicon.setAlternateIconName(null, showAlert: showAlert);
                     ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("App icon restore successful"),
                     ));
                     Bushaicon.getAlternateIconName().then((v) {
@@ -249,14 +251,14 @@ class _MyAppState extends State<MyApp> {
                 } on PlatformException {
                 } catch (e) {}
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("Failed to change app icon"),
                 ));
               },
             ),
             OutlinedButton.icon(
-              icon: Icon(Icons.restore_outlined),
-              label: Text("Andriod Icon"),
+              icon: const Icon(Icons.restore_outlined),
+              label: const Text("Andriod Icon"),
               onPressed: () async {
                 switchAppIcon();
               },

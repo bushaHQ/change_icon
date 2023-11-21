@@ -1,6 +1,6 @@
 # Change Icon
 
-<img src="https://github.com/bushaHQ/change_icon/assets/36260221/f7116c51-5d60-451c-bcd7-1292e265f1bb" title="Change Icon" />
+![Change Icon](https://github.com/bushaHQ/change_icon/assets/36260221/f7116c51-5d60-451c-bcd7-1292e265f1bb)
 
 ![GitHub](https://img.shields.io/github/license/bushaHQ/change_icon?style=plastic) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bushaHQ/change_icon?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/bushaHQ/change_icon?style=plastic) ![GitHub language count](https://img.shields.io/github/languages/count/bushaHQ/change_icon?style=plastic) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/bushaHQ/change_icon?style=plastic) ![GitHub issues](https://img.shields.io/github/issues/bushaHQ/change_icon?style=plastic) 
 

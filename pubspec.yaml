@@ -1,5 +1,5 @@
 name: changeicon
-description: A new Flutter plugin project.
+description: Change Flutter Apps icon dynamical on both Android and IOS.
 version: 0.0.1
 homepage: https://github.com/bushaHQ/change_icon
 

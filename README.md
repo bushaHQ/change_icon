@@ -20,7 +20,7 @@ All the features listed below can be performed at the runtime.
 
 Features only work for IOS for now
 
-✅ &nbsp
+✅ &nbsp; Set Batch Number
 
 <!-- ## Demo -->
 

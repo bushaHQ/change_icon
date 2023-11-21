@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:changeicon_example/src/android_config.dart';
 import 'package:changeicon_example/src/ios_configuration.dart';
-import 'package:changeicon_example/src/theme/theme_config.dart';
 import 'package:changeicon_example/src/theme/theme_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +32,7 @@ class _MyAppState extends State<MyApp> {
           home: Scaffold(
             key: scaffoldKey,
             appBar: AppBar(
-              title: const Text('Dynamic App Icon'),
+              title: const Text('Change App Icon'),
             ),
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 28),

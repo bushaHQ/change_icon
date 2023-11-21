@@ -1,4 +1,4 @@
-package com.example.bushaicon;
+package com.example.changeicon;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -21,7 +21,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 
 public class MethodCallImplementation implements MethodChannel.MethodCallHandler {
-    private static final String TAG = BushaiconPlugin.getTAG();
+    private static final String TAG = ChangeiconPlugin.getTAG();
 
     private final Context context;
     private Activity activity;

@@ -1,4 +1,4 @@
-package com.example.bushaicon_example;
+package com.example.changeicon_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

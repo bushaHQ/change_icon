@@ -1,4 +1,4 @@
-# bushaicon
+# changeicon
 
 A new Flutter plugin project.
 

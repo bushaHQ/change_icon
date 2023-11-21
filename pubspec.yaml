@@ -36,10 +36,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.bushaicon
-        pluginClass: BushaiconPlugin
+        package: com.example.changeicon
+        pluginClass: ChangeiconPlugin
       ios:
-        pluginClass: BushaiconPlugin
+        pluginClass: ChangeiconPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

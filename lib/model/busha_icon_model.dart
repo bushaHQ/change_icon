@@ -1,5 +1,5 @@
-class BushaIconData {
-  const BushaIconData({
+class changeiconData {
+  const changeiconData({
     required this.iconName,
     required this.className,
   });

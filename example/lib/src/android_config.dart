@@ -9,7 +9,7 @@ class AndroidConfiguration extends StatefulWidget {
 }
 
 class _AndroidConfigurationState extends State<AndroidConfiguration> {
-  final _ChangeiconPlugin = Changeicon();
+  final _changeiconPlugin = Changeicon();
 
   @override
   void initState() {
@@ -20,7 +20,7 @@ class _AndroidConfigurationState extends State<AndroidConfiguration> {
   }
 
   void switchAppIcon() async {
-    await _ChangeiconPlugin.switchIconTo(classNames: ['DarkTheme', '']);
+    await _changeiconPlugin.switchIconTo(classNames: ['DarkTheme', '']);
   }
 
   @override

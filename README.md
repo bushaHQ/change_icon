@@ -147,3 +147,132 @@ await _changeiconPlugin.switchIconTo(
     className: 'DarkTheme',
 );
 ```
+
+## IOS Setup
+
+### Step 1: Include plugin to your project
+
+```yml
+dependencies:
+  changeicon: <latest version>
+```
+
+
+### Step 2: Include your icons to the project
+
+#### Index
+* `2x` - `120px x 120px`  
+* `3x` - `180px x 180px`
+
+To integrate your plugin into the iOS part of your app, follow these steps
+
+1. First let us put a few images for app icons, they are 
+    * `teamfortress@2x.png`, `teamfortress@3x.png` 
+    * `photos@2x.png`, `photos@3x.png`, 
+    * `chills@2x.png`, `chills@3x.png`,
+2. These icons shouldn't be kept in `Assets.xcassets` folder, but outside. When copying to Xcode, you can select 'create folder references' or 'create groups'.
+
+Example: </br>
+
+<img width="250" alt="Screenshot 2023-11-21 at 10 18 12" src="https://github.com/bushaHQ/change_icon/assets/36260221/cacfbec1-f38e-4b91-abfd-27bb637f75d9">
+
+</br>
+
+3. Next, we need to setup the `Info.plist`
+    1. Add `Icon files (iOS 5)` to the Information Property List
+    2. Add `CFBundleAlternateIcons` as a dictionary, it is used for alternative icons
+    3. Set 3 dictionaries under `CFBundleAlternateIcons`, they are correspond to `teamfortress`, `photos`, and `chills`
+    4. For each dictionary, two properties — `UIPrerenderedIcon` and `CFBundleIconFiles` need to be configured
+	5. If the sub-property `UINewsstandIcon` is showing under `Icon files (iOS 5)` and you don't plan on using it (it is intended for use with Newstand features), erase it or the app will get rejected upon submission on the App Store
+
+
+Note that if you need it work for iPads, You need to add these icon declarations in `CFBundleIcons~ipad` as well. [See here](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW14) for more details.
+
+Example: </br>
+
+#### Raw
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>chills</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>chills</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>photos</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>photos</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>teamfortress</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>teamfortress</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>chills</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+	</dict>
+...
+...
+</dict>
+</plist>
+
+```
+
+### Dart/Flutter Integration
+
+From your Dart code, you need to import the plugin and use it's static methods:
+
+```dart 
+import 'package:flutter_dynamic_icon/flutter_dynamic_icon.dart';
+
+try {
+  if (await FlutterDynamicIcon.supportsAlternateIcons) {
+    await FlutterDynamicIcon.setAlternateIconName("photos");
+    print("App icon change successful");
+    return;
+  }
+} on PlatformException {} catch (e) {}
+print("Failed to change app icon");
+
+...
+
+// set batch number
+try {
+	await FlutterDynamicIcon.setApplicationIconBadgeNumber(9399);
+} on PlatformException {} catch (e) {}
+
+// gets currently set batch number
+int batchNumber = FlutterDynamicIcon.getApplicationIconBadgeNumber();
+
+```

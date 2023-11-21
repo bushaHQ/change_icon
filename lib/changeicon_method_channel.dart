@@ -11,7 +11,8 @@ class MethodChannelChangeicon extends ChangeiconPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
 
@@ -28,7 +29,8 @@ class MethodChannelChangeicon extends ChangeiconPlatform {
   /// Indicates whether the current platform supports dynamic app icons
   @override
   Future<bool> supportsAlternateIcons() async {
-    final bool supportsAltIcons = await methodChannel.invokeMethod('mSupportsAlternateIcons');
+    final bool supportsAltIcons =
+        await methodChannel.invokeMethod('mSupportsAlternateIcons');
     return supportsAltIcons;
   }
 
@@ -37,7 +39,8 @@ class MethodChannelChangeicon extends ChangeiconPlatform {
   /// Returns `null` if the current icon is the default icon
   @override
   Future<String?> getAlternateIconName() async {
-    final String? altIconName = await methodChannel.invokeMethod('mGetAlternateIconName');
+    final String? altIconName =
+        await methodChannel.invokeMethod('mGetAlternateIconName');
     return altIconName;
   }
 
@@ -65,7 +68,8 @@ class MethodChannelChangeicon extends ChangeiconPlatform {
   /// The default value of this property is `0` (to show no batch)
   @override
   Future<int> getApplicationIconBadgeNumber() async {
-    final int batchIconNumber = await methodChannel.invokeMethod('mGetApplicationIconBadgeNumber');
+    final int batchIconNumber =
+        await methodChannel.invokeMethod('mGetApplicationIconBadgeNumber');
     return batchIconNumber;
   }
 
@@ -76,7 +80,7 @@ class MethodChannelChangeicon extends ChangeiconPlatform {
   /// Throws a [PlatformException] in case an error
   @override
   Future setApplicationIconBadgeNumber(int batchIconNumber) async {
-    await methodChannel.invokeMethod(
-        'mSetApplicationIconBadgeNumber', <String, Object>{'batchIconNumber': batchIconNumber});
+    await methodChannel.invokeMethod('mSetApplicationIconBadgeNumber',
+        <String, Object>{'batchIconNumber': batchIconNumber});
   }
 }

@@ -26,16 +26,15 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData.light(
             useMaterial3: true,
           ),
-          darkTheme: ThemeData.dark(
-            useMaterial3: true
-          ),
+          darkTheme: ThemeData.dark(useMaterial3: true),
           home: Scaffold(
             key: scaffoldKey,
             appBar: AppBar(
               title: const Text('Change App Icon'),
             ),
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 28),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 28),
               child: ListView(
                 children: <Widget>[
                   Visibility(

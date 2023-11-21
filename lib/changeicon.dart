@@ -15,7 +15,8 @@ class Changeicon {
 
   /// Indicates whether the current platform supports dynamic app icons
   static Future<bool> get supportsAlternateIcons async {
-    final bool supportsAltIcons = await ChangeiconPlatform.instance.supportsAlternateIcons();
+    final bool supportsAltIcons =
+        await ChangeiconPlatform.instance.supportsAlternateIcons();
     return supportsAltIcons;
   }
 
@@ -23,7 +24,8 @@ class Changeicon {
   ///
   /// Returns `null` if the current icon is the default icon
   static Future<String?> getAlternateIconName() async {
-    final String? altIconName = await ChangeiconPlatform.instance.getAlternateIconName();
+    final String? altIconName =
+        await ChangeiconPlatform.instance.getAlternateIconName();
     return altIconName;
   }
 
@@ -35,15 +37,18 @@ class Changeicon {
   ///
   /// Throws a [PlatformException] with description if
   /// it can't find [iconName] or there's any other error
-  static Future setAlternateIconName(String? iconName, {bool showAlert = true}) async {
-    await ChangeiconPlatform.instance.setAlternateIconName(iconName, showAlert: showAlert);
+  static Future setAlternateIconName(String? iconName,
+      {bool showAlert = true}) async {
+    await ChangeiconPlatform.instance
+        .setAlternateIconName(iconName, showAlert: showAlert);
   }
 
   /// Fetches the icon batch number
   ///
   /// The default value of this property is `0` (to show no batch)
   static Future<int> getApplicationIconBadgeNumber() async {
-    final int batchIconNumber = await ChangeiconPlatform.instance.getApplicationIconBadgeNumber();
+    final int batchIconNumber =
+        await ChangeiconPlatform.instance.getApplicationIconBadgeNumber();
     return batchIconNumber;
   }
 
@@ -53,6 +58,7 @@ class Changeicon {
   ///
   /// Throws a [PlatformException] in case an error
   static Future setApplicationIconBadgeNumber(int batchIconNumber) async {
-    await ChangeiconPlatform.instance.setApplicationIconBadgeNumber(batchIconNumber);
+    await ChangeiconPlatform.instance
+        .setApplicationIconBadgeNumber(batchIconNumber);
   }
 }

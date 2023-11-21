@@ -76,25 +76,30 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
                         loading = true;
                       });
                       try {
-                        await Changeicon.setApplicationIconBadgeNumber(int.parse(controller.text));
-                        batchIconNumber = await Changeicon.getApplicationIconBadgeNumber();
+                        await Changeicon.setApplicationIconBadgeNumber(
+                            int.parse(controller.text));
+                        batchIconNumber =
+                            await Changeicon.getApplicationIconBadgeNumber();
                         if (mounted) {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
                             content: Text("Successfully changed batch number"),
                           ));
                         }
                       } on PlatformException {
                         if (mounted) {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
                             content: Text("Failed to change batch number"),
                           ));
                         }
                       } catch (e) {
                         if (mounted) {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
                             content: Text("Failed to change batch number"),
                           ));
                         }
@@ -120,8 +125,8 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
         ),
         SwitchListTile(
             title: const Text("Show Alert"),
-            subtitle:
-                const Text("Disable alert at your own risk as it uses a private/undocumented API"),
+            subtitle: const Text(
+                "Disable alert at your own risk as it uses a private/undocumented API"),
             value: showAlert,
             onChanged: (value) {
               setState(() {
@@ -134,7 +139,8 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           onPressed: () async {
             try {
               if (await Changeicon.supportsAlternateIcons) {
-                await Changeicon.setAlternateIconName("teamfortress", showAlert: showAlert);
+                await Changeicon.setAlternateIconName("teamfortress",
+                    showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon change successful"),
@@ -161,7 +167,8 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           onPressed: () async {
             try {
               if (await Changeicon.supportsAlternateIcons) {
-                await Changeicon.setAlternateIconName("chills", showAlert: showAlert);
+                await Changeicon.setAlternateIconName("chills",
+                    showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon change successful"),
@@ -191,7 +198,8 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           onPressed: () async {
             try {
               if (await Changeicon.supportsAlternateIcons) {
-                await Changeicon.setAlternateIconName(null, showAlert: showAlert);
+                await Changeicon.setAlternateIconName(null,
+                    showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon restore successful"),
@@ -220,7 +228,6 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
             themeNotifier.toggleTheme(
               value ? ThemeMode.dark : ThemeMode.light,
             );
-
           },
         ),
       ],

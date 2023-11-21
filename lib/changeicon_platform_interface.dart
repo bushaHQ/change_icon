@@ -74,6 +74,4 @@ abstract class ChangeiconPlatform extends PlatformInterface {
   Future setApplicationIconBadgeNumber(int batchIconNumber) async {
     throw UnimplementedError('initialize() has not been implemented.');
   }
-
-  
 }

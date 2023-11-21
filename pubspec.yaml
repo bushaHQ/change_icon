@@ -1,6 +1,6 @@
 name: changeicon
-description: Change Flutter Apps icon dynamical on both Android and IOS.
-version: 0.0.1
+description: Changeicon empowe Flutter apps to dynamically change icons on Android and iOS
+version: 1.0.0
 homepage: https://github.com/bushaHQ/change_icon
 
 environment:

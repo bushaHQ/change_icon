@@ -1,6 +1,6 @@
-# bushaicon_example
+# changeicon_example
 
-Demonstrates how to use the bushaicon plugin.
+Demonstrates how to use the changeicon plugin.
 
 ## Getting Started
 

@@ -1,4 +1,4 @@
-group 'com.example.bushaicon'
+group 'com.example.changeicon'
 version '1.0'
 
 buildscript {

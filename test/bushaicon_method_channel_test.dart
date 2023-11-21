@@ -1,12 +1,13 @@
+import 'package:changeicon/changeicon_method_channel.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bushaicon/bushaicon_method_channel.dart';
+
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  MethodChannelBushaicon platform = MethodChannelBushaicon();
-  const MethodChannel channel = MethodChannel('bushaicon');
+  MethodChannelChangeicon platform = MethodChannelChangeicon();
+  const MethodChannel channel = MethodChannel('changeicon');
 
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(

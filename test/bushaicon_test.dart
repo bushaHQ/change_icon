@@ -1,12 +1,13 @@
+import 'package:changeicon/changeicon.dart';
+import 'package:changeicon/changeicon_method_channel.dart';
+import 'package:changeicon/changeicon_platform_interface.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bushaicon/bushaicon.dart';
-import 'package:bushaicon/bushaicon_platform_interface.dart';
-import 'package:bushaicon/bushaicon_method_channel.dart';
+
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockBushaiconPlatform
+class MockChangeiconPlatform
     with MockPlatformInterfaceMixin
-    implements BushaiconPlatform {
+    implements ChangeiconPlatform {
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
@@ -48,17 +49,17 @@ class MockBushaiconPlatform
 }
 
 void main() {
-  final BushaiconPlatform initialPlatform = BushaiconPlatform.instance;
+  final ChangeiconPlatform initialPlatform = ChangeiconPlatform.instance;
 
-  test('$MethodChannelBushaicon is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelBushaicon>());
+  test('$MethodChannelChangeicon is the default instance', () {
+    expect(initialPlatform, isInstanceOf<MethodChannelChangeicon>());
   });
 
   test('getPlatformVersion', () async {
-    Bushaicon bushaiconPlugin = Bushaicon();
-    MockBushaiconPlatform fakePlatform = MockBushaiconPlatform();
-    BushaiconPlatform.instance = fakePlatform;
+    Changeicon changeiconPlugin = Changeicon();
+    MockChangeiconPlatform fakePlatform = MockChangeiconPlatform();
+    ChangeiconPlatform.instance = fakePlatform;
 
-    expect(await bushaiconPlugin.getPlatformVersion(), '42');
+    expect(await changeiconPlugin.getPlatformVersion(), '42');
   });
 }

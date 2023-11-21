@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'bushaicon_platform_interface.dart';
+import 'changeicon_platform_interface.dart';
 
-/// An implementation of [BushaiconPlatform] that uses method channels.
-class MethodChannelBushaicon extends BushaiconPlatform {
+/// An implementation of [ChangeiconPlatform] that uses method channels.
+class MethodChannelChangeicon extends ChangeiconPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('bushaicon');
+  final methodChannel = const MethodChannel('Changeicon');
 
   @override
   Future<String?> getPlatformVersion() async {

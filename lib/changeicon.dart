@@ -1,21 +1,21 @@
-import 'bushaicon_platform_interface.dart';
+import 'changeicon_platform_interface.dart';
 
-class Bushaicon {
+class Changeicon {
   Future<String?> getPlatformVersion() {
-    return BushaiconPlatform.instance.getPlatformVersion();
+    return ChangeiconPlatform.instance.getPlatformVersion();
   }
 
   Future<void> switchIconTo({required List<String> classNames}) async {
-    await BushaiconPlatform.instance.switchIconTo(classNames: classNames);
+    await ChangeiconPlatform.instance.switchIconTo(classNames: classNames);
   }
 
   static Future<void> initialize({required List<String> classNames}) async {
-    await BushaiconPlatform.instance.initialize(classNames: classNames);
+    await ChangeiconPlatform.instance.initialize(classNames: classNames);
   }
 
   /// Indicates whether the current platform supports dynamic app icons
   static Future<bool> get supportsAlternateIcons async {
-    final bool supportsAltIcons = await BushaiconPlatform.instance.supportsAlternateIcons();
+    final bool supportsAltIcons = await ChangeiconPlatform.instance.supportsAlternateIcons();
     return supportsAltIcons;
   }
 
@@ -23,7 +23,7 @@ class Bushaicon {
   ///
   /// Returns `null` if the current icon is the default icon
   static Future<String?> getAlternateIconName() async {
-    final String? altIconName = await BushaiconPlatform.instance.getAlternateIconName();
+    final String? altIconName = await ChangeiconPlatform.instance.getAlternateIconName();
     return altIconName;
   }
 
@@ -36,14 +36,14 @@ class Bushaicon {
   /// Throws a [PlatformException] with description if
   /// it can't find [iconName] or there's any other error
   static Future setAlternateIconName(String? iconName, {bool showAlert = true}) async {
-    await BushaiconPlatform.instance.setAlternateIconName(iconName, showAlert: showAlert);
+    await ChangeiconPlatform.instance.setAlternateIconName(iconName, showAlert: showAlert);
   }
 
   /// Fetches the icon batch number
   ///
   /// The default value of this property is `0` (to show no batch)
   static Future<int> getApplicationIconBadgeNumber() async {
-    final int batchIconNumber = await BushaiconPlatform.instance.getApplicationIconBadgeNumber();
+    final int batchIconNumber = await ChangeiconPlatform.instance.getApplicationIconBadgeNumber();
     return batchIconNumber;
   }
 
@@ -53,6 +53,6 @@ class Bushaicon {
   ///
   /// Throws a [PlatformException] in case an error
   static Future setApplicationIconBadgeNumber(int batchIconNumber) async {
-    await BushaiconPlatform.instance.setApplicationIconBadgeNumber(batchIconNumber);
+    await ChangeiconPlatform.instance.setApplicationIconBadgeNumber(batchIconNumber);
   }
 }

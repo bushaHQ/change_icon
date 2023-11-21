@@ -1,24 +1,24 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'bushaicon_method_channel.dart';
+import 'changeicon_method_channel.dart';
 
-abstract class BushaiconPlatform extends PlatformInterface {
-  /// Constructs a BushaiconPlatform.
-  BushaiconPlatform() : super(token: _token);
+abstract class ChangeiconPlatform extends PlatformInterface {
+  /// Constructs a ChangeiconPlatform.
+  ChangeiconPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static BushaiconPlatform _instance = MethodChannelBushaicon();
+  static ChangeiconPlatform _instance = MethodChannelChangeicon();
 
-  /// The default instance of [BushaiconPlatform] to use.
+  /// The default instance of [ChangeiconPlatform] to use.
   ///
-  /// Defaults to [MethodChannelBushaicon].
-  static BushaiconPlatform get instance => _instance;
+  /// Defaults to [MethodChannelChangeicon].
+  static ChangeiconPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
-  /// platform-specific class that extends [BushaiconPlatform] when
+  /// platform-specific class that extends [ChangeiconPlatform] when
   /// they register themselves.
-  static set instance(BushaiconPlatform instance) {
+  static set instance(ChangeiconPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

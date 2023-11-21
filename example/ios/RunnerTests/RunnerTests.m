@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@import bushaicon;
+@import Changeicon;
 
 // This demonstrates a simple unit test of the Objective-C portion of this plugin's implementation.
 //
@@ -15,7 +15,7 @@
 @implementation RunnerTests
 
 - (void)testExample {
-  BushaiconPlugin *plugin = [[BushaiconPlugin alloc] init];
+  ChangeiconPlugin *plugin = [[ChangeiconPlugin alloc] init];
 
   FlutterMethodCall *call = [FlutterMethodCall methodCallWithMethodName:@"getPlatformVersion"
                                                               arguments:nil];

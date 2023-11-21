@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:changeicon/Changeicon.dart';
+import 'package:changeicon_example/src/theme/theme_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -42,7 +43,9 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 20,),
+        const SizedBox(
+          height: 20,
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -154,33 +157,6 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
         ),
         OutlinedButton.icon(
           icon: const Icon(Icons.ac_unit),
-          label: const Text("Photos"),
-          onPressed: () async {
-            try {
-              if (await Changeicon.supportsAlternateIcons) {
-                await Changeicon.setAlternateIconName("photos", showAlert: showAlert);
-                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content: Text("App icon change successful"),
-                ));
-                Changeicon.getAlternateIconName().then((v) {
-                  setState(() {
-                    currentIconName = v ?? "`primary`";
-                  });
-                });
-                return;
-              }
-            } catch (e) {
-              debugPrint(e.toString());
-            }
-            ScaffoldMessenger.of(context).hideCurrentSnackBar();
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text("Failed to change app icon"),
-            ));
-          },
-        ),
-        OutlinedButton.icon(
-          icon: const Icon(Icons.ac_unit),
           label: const Text("Chills"),
           onPressed: () async {
             try {
@@ -234,6 +210,17 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
               content: Text("Failed to change app icon"),
             ));
+          },
+        ),
+        OutlinedButton.icon(
+          icon: const Icon(Icons.theater_comedy),
+          label: const Text("Change theme"),
+          onPressed: () async {
+            var value = themeNotifier.themeMode == ThemeMode.light;
+            themeNotifier.toggleTheme(
+              value ? ThemeMode.dark : ThemeMode.light,
+            );
+
           },
         ),
       ],

@@ -22,10 +22,9 @@ Features only work for IOS for now
 
 ✅ &nbsp; Set Batch Number
 
-<!-- ## Demo -->
-
-<!-- |<img height=500 src="https://i.imgur.com/UPcyPEl.gif"/>|
-|---| -->
+## Demo
+### IOS 
+<img src="https://github.com/bushaHQ/change_icon/assets/36260221/f434aeb8-6e6e-4350-9488-82d34e203bbe" width="200">
 
 ## Android Setup
 

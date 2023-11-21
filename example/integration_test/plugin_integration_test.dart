@@ -7,10 +7,10 @@
 // https://docs.flutter.dev/cookbook/testing/integration/introduction
 
 
+import 'package:changeicon/bushaicon.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:bushaicon/bushaicon.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();

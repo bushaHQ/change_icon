@@ -1,5 +1,5 @@
-class changeiconData {
-  const changeiconData({
+class ChangeiconData {
+  const ChangeiconData({
     required this.iconName,
     required this.className,
   });

@@ -1,7 +1,7 @@
 name: changeicon
 description: A new Flutter plugin project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/bushaHQ/change_icon
 
 environment:
   sdk: '>=3.0.3 <4.0.0'

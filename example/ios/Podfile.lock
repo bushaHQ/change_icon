@@ -1,5 +1,5 @@
 PODS:
-  - bushaicon (0.0.1):
+  - Changeicon (0.0.1):
     - Flutter
   - Flutter (1.0.0)
   - flutter_dynamic_icon (0.0.1):
@@ -8,14 +8,14 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - bushaicon (from `.symlinks/plugins/bushaicon/ios`)
+  - Changeicon (from `.symlinks/plugins/Changeicon/ios`)
   - Flutter (from `Flutter`)
   - flutter_dynamic_icon (from `.symlinks/plugins/flutter_dynamic_icon/ios`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
 
 EXTERNAL SOURCES:
-  bushaicon:
-    :path: ".symlinks/plugins/bushaicon/ios"
+  Changeicon:
+    :path: ".symlinks/plugins/Changeicon/ios"
   Flutter:
     :path: Flutter
   flutter_dynamic_icon:
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  bushaicon: dd970bd5dfdbd7c2319d602cc0ede3278088f636
+  Changeicon: dd970bd5dfdbd7c2319d602cc0ede3278088f636
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_dynamic_icon: fb0cd2f84c817c1a0ddbbc383fbebec3cd5e88d8
   integration_test: 13825b8a9334a850581300559b8839134b124670

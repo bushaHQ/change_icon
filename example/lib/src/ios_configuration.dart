@@ -1,6 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:bushaicon/bushaicon.dart';
+import 'package:changeicon/Changeicon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,13 +24,13 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
 
   @override
   void initState() {
-    Bushaicon.getApplicationIconBadgeNumber().then((v) {
+    Changeicon.getApplicationIconBadgeNumber().then((v) {
       setState(() {
         batchIconNumber = v;
       });
     });
 
-    Bushaicon.getAlternateIconName().then((v) {
+    Changeicon.getAlternateIconName().then((v) {
       setState(() {
         currentIconName = v ?? "`primary`";
       });
@@ -72,8 +72,8 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
                         loading = true;
                       });
                       try {
-                        await Bushaicon.setApplicationIconBadgeNumber(int.parse(controller.text));
-                        batchIconNumber = await Bushaicon.getApplicationIconBadgeNumber();
+                        await Changeicon.setApplicationIconBadgeNumber(int.parse(controller.text));
+                        batchIconNumber = await Changeicon.getApplicationIconBadgeNumber();
                         if (mounted) {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -129,13 +129,13 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           label: const Text("Team Fortress"),
           onPressed: () async {
             try {
-              if (await Bushaicon.supportsAlternateIcons) {
-                await Bushaicon.setAlternateIconName("teamfortress", showAlert: showAlert);
+              if (await Changeicon.supportsAlternateIcons) {
+                await Changeicon.setAlternateIconName("teamfortress", showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon change successful"),
                 ));
-                Bushaicon.getAlternateIconName().then((v) {
+                Changeicon.getAlternateIconName().then((v) {
                   setState(() {
                     currentIconName = v ?? "`primary`";
                   });
@@ -156,13 +156,13 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           label: const Text("Photos"),
           onPressed: () async {
             try {
-              if (await Bushaicon.supportsAlternateIcons) {
-                await Bushaicon.setAlternateIconName("photos", showAlert: showAlert);
+              if (await Changeicon.supportsAlternateIcons) {
+                await Changeicon.setAlternateIconName("photos", showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon change successful"),
                 ));
-                Bushaicon.getAlternateIconName().then((v) {
+                Changeicon.getAlternateIconName().then((v) {
                   setState(() {
                     currentIconName = v ?? "`primary`";
                   });
@@ -183,13 +183,13 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           label: const Text("Chills"),
           onPressed: () async {
             try {
-              if (await Bushaicon.supportsAlternateIcons) {
-                await Bushaicon.setAlternateIconName("chills", showAlert: showAlert);
+              if (await Changeicon.supportsAlternateIcons) {
+                await Changeicon.setAlternateIconName("chills", showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon change successful"),
                 ));
-                Bushaicon.getAlternateIconName().then((v) {
+                Changeicon.getAlternateIconName().then((v) {
                   setState(() {
                     currentIconName = v ?? "`primary`";
                   });
@@ -213,13 +213,13 @@ class _IOSConfigurationState extends State<IOSConfiguration> {
           label: const Text("Restore Icon"),
           onPressed: () async {
             try {
-              if (await Bushaicon.supportsAlternateIcons) {
-                await Bushaicon.setAlternateIconName(null, showAlert: showAlert);
+              if (await Changeicon.supportsAlternateIcons) {
+                await Changeicon.setAlternateIconName(null, showAlert: showAlert);
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("App icon restore successful"),
                 ));
-                Bushaicon.getAlternateIconName().then((v) {
+                Changeicon.getAlternateIconName().then((v) {
                   setState(() {
                     currentIconName = v ?? "`primary`";
                   });

@@ -1,11 +1,11 @@
-#import "BushaiconPlugin.h"
+#import "ChangeiconPlugin.h"
 
-@implementation BushaiconPlugin
+@implementation ChangeiconPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"bushaicon"
+      methodChannelWithName:@"Changeicon"
             binaryMessenger:[registrar messenger]];
-  BushaiconPlugin* instance = [[BushaiconPlugin alloc] init];
+  ChangeiconPlugin* instance = [[ChangeiconPlugin alloc] init];
     [channel setMethodCallHandler:^(FlutterMethodCall *call, FlutterResult result) {
         if ([@"mSupportsAlternateIcons" isEqualToString:call.method]) {
             if (@available(iOS 10.3, *)) {

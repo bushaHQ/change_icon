@@ -1,4 +1,4 @@
-package com.example.bushaicon;
+package com.example.changeicon;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
@@ -33,8 +33,8 @@ import java.util.List;
 
 import io.flutter.Log;
 
-/** BushaiconPlugin */
-public class BushaiconPlugin implements FlutterPlugin, ActivityAware {
+/** ChangeiconPlugin */
+public class changeiconPlugin implements FlutterPlugin, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -43,7 +43,7 @@ public class BushaiconPlugin implements FlutterPlugin, ActivityAware {
   private MethodCallImplementation handler;
   private static final String TAG = "[busha_icon]";
 
-  private static final String CHANNEL_ID = "bushaicon";
+  private static final String CHANNEL_ID = "Changeicon";
 
   public static String getTAG() {
     return TAG;
@@ -55,7 +55,7 @@ public class BushaiconPlugin implements FlutterPlugin, ActivityAware {
 
   @SuppressWarnings("deprecation")
   public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
-    final BushaiconPlugin plugin = new BushaiconPlugin();
+    final ChangeiconPlugin plugin = new ChangeiconPlugin();
     plugin.setupChannel(registrar.messenger(), registrar.context(), registrar.activity());
   }
 
@@ -93,7 +93,7 @@ public class BushaiconPlugin implements FlutterPlugin, ActivityAware {
 
     @Override
     public void onPause(@NonNull LifecycleOwner owner) {
-      Log.i("BushaIcon", "The app has paused");
+      Log.i("Changeicon", "The app has paused");
       handler.updateIcon();
     
     }
@@ -207,7 +207,7 @@ public class BushaiconPlugin implements FlutterPlugin, ActivityAware {
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    // channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "bushaicon");
+    // channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "Changeicon");
     // channel.setMethodCallHandler(this);
     setupChannel(flutterPluginBinding.getBinaryMessenger(), flutterPluginBinding.getApplicationContext(), null);
     pluginBinding =  flutterPluginBinding;

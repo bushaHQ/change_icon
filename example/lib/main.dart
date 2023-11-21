@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:bushaicon_example/src/android_config.dart';
-import 'package:bushaicon_example/src/ios_configuration.dart';
+import 'package:changeicon_example/src/android_config.dart';
+import 'package:changeicon_example/src/ios_configuration.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MaterialApp(home: MyApp()));

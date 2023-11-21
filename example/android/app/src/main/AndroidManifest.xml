@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="bushaicon_example"
+        android:label="changeicon_example"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -30,7 +30,7 @@
         android:enabled="false"
         android:icon="@mipmap/dark_theme"
         android:exported="true"
-        android:label="bushaicon_example"
+        android:label="changeicon_example"
         android:targetActivity=".MainActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
@@ -43,7 +43,7 @@
         android:enabled="false"
         android:exported="true"
         android:icon="@mipmap/light_theme"
-        android:label="bushaicon_example"
+        android:label="changeicon_example"
         android:targetActivity=".MainActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN"/>

@@ -1,4 +1,4 @@
-name: bushaicon
+name: changeicon
 description: A new Flutter plugin project.
 version: 0.0.1
 homepage:
@@ -36,10 +36,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.bushaicon
-        pluginClass: BushaiconPlugin
+        package: com.example.changeicon
+        pluginClass: changeiconPlugin
       ios:
-        pluginClass: BushaiconPlugin
+        pluginClass: changeiconPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

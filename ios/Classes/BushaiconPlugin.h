@@ -1,4 +1,4 @@
 #import <Flutter/Flutter.h>
 
-@interface BushaiconPlugin : NSObject<FlutterPlugin>
+@interface ChangeiconPlugin : NSObject<FlutterPlugin>
 @end

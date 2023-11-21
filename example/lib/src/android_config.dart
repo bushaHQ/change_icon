@@ -1,4 +1,4 @@
-import 'package:bushaicon/bushaicon.dart';
+import 'package:changeicon/Changeicon.dart';
 import 'package:flutter/material.dart';
 
 class AndroidConfiguration extends StatefulWidget {
@@ -9,18 +9,18 @@ class AndroidConfiguration extends StatefulWidget {
 }
 
 class _AndroidConfigurationState extends State<AndroidConfiguration> {
-  final _bushaiconPlugin = Bushaicon();
-  
+  final _ChangeiconPlugin = Changeicon();
+
   @override
   void initState() {
-    Bushaicon.initialize(
+    Changeicon.initialize(
       classNames: ['MainActivity', 'DarkTheme', 'LightTheme'],
     );
     super.initState();
   }
 
   void switchAppIcon() async {
-    await _bushaiconPlugin.switchIconTo(classNames: ['DarkTheme', '']);
+    await _ChangeiconPlugin.switchIconTo(classNames: ['DarkTheme', '']);
   }
 
   @override

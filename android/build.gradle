@@ -37,10 +37,7 @@ android {
 
     dependencies {
         testImplementation 'junit:junit:4.13.2'
-        testImplementation 'org.mockito:mockito-core:5.0.0'
-        implementation "io.flutter:flutter_embedding_release:1.0.0"
-        implementation "androidx.lifecycle:lifecycle-common:2.8.7"
-        
+        testImplementation 'org.mockito:mockito-core:5.0.0'  
     }
 
     testOptions {

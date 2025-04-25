@@ -16,8 +16,8 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.Log;
 
-/** AndroidDynamicIconPlugin */
-public class AndroidDynamicIconPlugin implements FlutterPlugin, ActivityAware {
+/** ChangeiconPlugin */
+public class ChangeiconPlugin implements FlutterPlugin, ActivityAware {
     private MethodChannel channel;
     private MethodCallImplementation handler;
     private static final String TAG = "[Change_icon]";

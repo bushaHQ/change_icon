@@ -86,7 +86,7 @@
                     if (granted) {
                         @try {
                             NSInteger batchIconNumber = ((NSNumber *)call.arguments[@"batchIconNumber"]).integerValue;
-                        numberWithInteger:UIApplication.sharedApplication.applicationIconBadgeNumber = batchIconNumber;
+                        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:batchIconNumber];
                             result(nil);
                         }
                         @catch (NSException *exception) {
@@ -109,7 +109,7 @@
                     
                     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
                     NSInteger batchIconNumber = ((NSNumber *)call.arguments[@"batchIconNumber"]).integerValue;
-                numberWithInteger:UIApplication.sharedApplication.applicationIconBadgeNumber = batchIconNumber;
+                [[UIApplication sharedApplication] setApplicationIconBadgeNumber:batchIconNumber];
                     result(nil);
                 }
                 @catch (NSException *exception) {
